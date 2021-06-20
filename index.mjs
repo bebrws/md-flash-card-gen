@@ -9,6 +9,7 @@ console.log(
     "\n\nAll output from this session is written and appended to the local file flash-card-data.md\n\n"
   )
 );
+console.log("Made for use in a .md file in a Github Repo\n\n");
 
 while (true) {
   let fcfront = rlsync.question(
@@ -30,12 +31,9 @@ while (true) {
     if (fcanswer) fcanswers.push(fcanswer);
   } while (fcanswer);
 
-  console.log("fcanswers", fcanswers);
   const fcitems = fcanswers.reduce((acc, cur) => {
     return (acc += `<li>${cur}</li>\n        `);
   }, "");
-
-  console.log("fcitems", fcitems);
 
   const output = `
   ### ${fcfront}
