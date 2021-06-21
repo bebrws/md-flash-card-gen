@@ -31,8 +31,10 @@ while (true) {
     if (fcanswer) fcanswers.push(fcanswer);
   } while (fcanswer);
 
-  const fcitems = fcanswers.reduce((acc, cur) => {
-    return (acc += `<li>${cur}</li>\n        `);
+  // TODO DONT ADD SPACE AFTER the last li
+  const fcitems = fcanswers.reduce((acc, cur, index, array) => {
+    return (acc +=
+      `<li>${cur}</li>` + index !== array.length - 1 ? "\n        " : "");
   }, "");
 
   const output = `
